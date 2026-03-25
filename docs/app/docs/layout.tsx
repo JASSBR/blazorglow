@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const sidebar = [
   {
@@ -54,6 +57,8 @@ const sidebar = [
 ];
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
   return (
     <div className="max-w-7xl mx-auto flex min-h-screen">
       <aside className="hidden lg:block w-64 shrink-0 border-r border-border p-6 sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto">
@@ -62,16 +67,23 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
             <div key={section.title}>
               <h3 className="text-xs font-semibold uppercase tracking-wider text-text-muted mb-3">{section.title}</h3>
               <ul className="space-y-1">
-                {section.items.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="block px-3 py-1.5 text-sm text-text-muted hover:text-text rounded-lg hover:bg-bg-hover transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
+                {section.items.map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        className={`block px-3 py-1.5 text-sm rounded-lg transition-colors ${
+                          isActive
+                            ? "text-primary bg-primary/10 font-medium"
+                            : "text-text-muted hover:text-text hover:bg-bg-hover"
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
