@@ -1,0 +1,54 @@
+.shimmer-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius, 8px);
+    background-color: var(--bg-color, #6366f1);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.shimmer-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.shimmer-button:active {
+    transform: translateY(0);
+}
+
+.shimmer-button__content {
+    position: relative;
+    z-index: 1;
+}
+
+.shimmer-button__shimmer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--shimmer-color, rgba(255, 255, 255, 0.3)) 50%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer-sweep var(--shimmer-speed, 2s) linear infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer-sweep {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}

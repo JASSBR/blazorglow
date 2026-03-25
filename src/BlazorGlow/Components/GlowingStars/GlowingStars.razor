@@ -1,0 +1,10 @@
+@namespace BlazorGlow.Components
+
+<div class="glowing-stars-container @Class" style="--star-color: @Color;">
+    @foreach (var star in _stars)
+    {
+        <span class="glowing-star"
+              style="top: @star.Top; left: @star.Left; width: @star.Size; height: @star.Size; animation-delay: @star.Delay; animation-duration: @star.Duration;">
+        </span>
+    }
+</div>

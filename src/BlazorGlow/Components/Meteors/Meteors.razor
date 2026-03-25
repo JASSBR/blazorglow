@@ -1,0 +1,10 @@
+@namespace BlazorGlow.Components
+
+<div class="meteors-container @Class" style="--meteor-color: @Color;">
+    @foreach (var meteor in _meteors)
+    {
+        <span class="meteor"
+              style="top: @meteor.Top; left: @meteor.Left; animation-delay: @meteor.Delay; animation-duration: @meteor.Duration;">
+        </span>
+    }
+</div>

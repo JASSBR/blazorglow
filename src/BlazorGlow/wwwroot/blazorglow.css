@@ -1,0 +1,12 @@
+/* BlazorGlow Base Styles */
+:root {
+  --blazorglow-primary: #6366f1;
+  --blazorglow-secondary: #a855f7;
+  --blazorglow-accent: #06b6d4;
+  --blazorglow-duration: 1s;
+}
+
+/* Reset for all BlazorGlow components */
+[class*="blazorglow-"] {
+  box-sizing: border-box;
+}

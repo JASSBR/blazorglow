@@ -1,0 +1,25 @@
+.flip-words-container {
+    display: inline-block;
+    position: relative;
+    vertical-align: baseline;
+    overflow: hidden;
+}
+
+.flip-words__word {
+    display: inline-block;
+    transition-property: transform, opacity, filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: var(--flip-interval, 0.9s);
+}
+
+.flip-words__word--enter {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+}
+
+.flip-words__word--exit {
+    transform: translateY(-100%);
+    opacity: 0;
+    filter: blur(4px);
+}

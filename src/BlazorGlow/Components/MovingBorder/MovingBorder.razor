@@ -1,0 +1,9 @@
+@namespace BlazorGlow.Components
+
+<div class="moving-border @Class"
+     style="--border-color: @BorderColor; --border-duration: @DurationValue; --border-radius: @(BorderRadius)px;">
+    <div class="moving-border__gradient"></div>
+    <div class="moving-border__content">
+        @ChildContent
+    </div>
+</div>

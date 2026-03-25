@@ -1,0 +1,9 @@
+@namespace BlazorGlow.Components
+
+<div @ref="_element"
+     class="card-3d @Class"
+     style="--perspective: @(Perspective)px;">
+    <div class="card-3d__inner">
+        @ChildContent
+    </div>
+</div>

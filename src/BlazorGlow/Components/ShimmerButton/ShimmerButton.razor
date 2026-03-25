@@ -1,0 +1,10 @@
+@namespace BlazorGlow.Components
+
+<button class="shimmer-button @Class"
+        style="--shimmer-color: @ShimmerColor; --bg-color: @BackgroundColor; --shimmer-speed: @SpeedValue; --border-radius: @(BorderRadius)px;"
+        @onclick="OnClick">
+    <span class="shimmer-button__content">
+        @ChildContent
+    </span>
+    <span class="shimmer-button__shimmer"></span>
+</button>

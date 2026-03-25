@@ -1,0 +1,24 @@
+.text-generate-effect {
+    display: inline;
+}
+
+.text-generate-effect__word {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+}
+
+.text-generate-effect:global(.blazorglow-visible) .text-generate-effect__word {
+    animation: text-generate-reveal var(--tge-duration, 0.5s) ease forwards;
+}
+
+@keyframes text-generate-reveal {
+    from {
+        opacity: 0;
+        filter: blur(4px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}

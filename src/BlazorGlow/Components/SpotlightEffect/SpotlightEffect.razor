@@ -1,0 +1,7 @@
+@namespace BlazorGlow.Components
+
+<div @ref="_element"
+     class="spotlight-effect @Class"
+     style="--spotlight-radius: @(ProximityRadius)px; --spotlight-color: @Color; --spotlight-opacity: @OpacityValue;">
+    @ChildContent
+</div>

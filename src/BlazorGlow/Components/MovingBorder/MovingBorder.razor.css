@@ -1,0 +1,40 @@
+.moving-border {
+    position: relative;
+    border-radius: var(--border-radius, 8px);
+    padding: 2px;
+    overflow: hidden;
+}
+
+.moving-border__gradient {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        var(--border-color, #6366f1) 10%,
+        transparent 20%,
+        transparent 100%
+    );
+    animation: moving-border-rotate var(--border-duration, 2s) linear infinite;
+}
+
+.moving-border__content {
+    position: relative;
+    border-radius: calc(var(--border-radius, 8px) - 2px);
+    background: inherit;
+    background-color: var(--content-bg, #09090b);
+    padding: inherit;
+    z-index: 1;
+}
+
+@keyframes moving-border-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,26 @@
+.spotlight-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.spotlight-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(
+        circle var(--spotlight-radius, 200px) at var(--mouse-x, 0px) var(--mouse-y, 0px),
+        var(--spotlight-color, #6366f1),
+        transparent
+    );
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.spotlight-effect:global(.blazorglow-hovered)::before {
+    opacity: var(--spotlight-opacity, 0.15);
+}

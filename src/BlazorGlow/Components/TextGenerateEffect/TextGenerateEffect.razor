@@ -1,0 +1,18 @@
+@namespace BlazorGlow.Components
+
+<div @ref="_element"
+     class="text-generate-effect @Class @(_isVisible ? "blazorglow-visible" : "")"
+     style="--tge-duration: @DurationValue; --tge-stagger: @StaggerDelayValue;">
+    @if (_words is not null)
+    {
+        @for (var i = 0; i < _words.Length; i++)
+        {
+            var delay = (i * StaggerDelay).ToString("0.0##", System.Globalization.CultureInfo.InvariantCulture) + "s";
+            <span class="text-generate-effect__word" style="animation-delay: @delay;">@_words[i]</span>
+            @if (i < _words.Length - 1)
+            {
+                <text> </text>
+            }
+        }
+    }
+</div>

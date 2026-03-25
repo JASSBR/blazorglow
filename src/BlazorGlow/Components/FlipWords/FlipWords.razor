@@ -1,0 +1,9 @@
+@namespace BlazorGlow.Components
+@implements IDisposable
+
+<span class="flip-words-container @Class">
+    <span class="flip-words__word @(_isAnimating ? "flip-words__word--exit" : "flip-words__word--enter")"
+          style="--flip-interval: @IntervalValue;">
+        @_currentWord
+    </span>
+</span>

@@ -1,0 +1,12 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+nupkg/
+node_modules/
+.next/
+out/
+.env
+.env.local
+.vercel

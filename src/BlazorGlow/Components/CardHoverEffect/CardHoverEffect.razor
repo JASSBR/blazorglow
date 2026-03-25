@@ -1,0 +1,10 @@
+@namespace BlazorGlow.Components
+
+<div @ref="_element"
+     class="card-hover-effect @Class"
+     style="--hover-border-color: @HoverBorderColor; --glow-spread: @(GlowSpread)px;">
+    <div class="card-hover-effect__glow"></div>
+    <div class="card-hover-effect__content">
+        @ChildContent
+    </div>
+</div>
