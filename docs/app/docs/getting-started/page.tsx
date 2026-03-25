@@ -1,3 +1,7 @@
+"use client";
+
+import { CopyBlock } from "@/components/CopyBlock";
+
 export default function GettingStarted() {
   return (
     <div className="max-w-3xl">
@@ -7,52 +11,30 @@ export default function GettingStarted() {
       <div className="space-y-12">
         <section>
           <h2 className="text-2xl font-semibold mb-4">1. Install the package</h2>
-          <div className="p-4 rounded-xl bg-bg-card border border-border font-mono text-sm">
-            <span className="text-text-muted">$ </span>dotnet add package BlazorGlow
-          </div>
+          <CopyBlock code="dotnet add package BlazorGlow" prefix="$" />
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">2. Register services</h2>
           <p className="text-text-muted mb-4">In your <code className="px-1.5 py-0.5 rounded bg-bg-card text-sm">Program.cs</code>:</p>
-          <pre className="p-4 rounded-xl bg-bg-card border border-border text-sm overflow-x-auto">
-{`using BlazorGlow.Extensions;
-
-builder.Services.AddBlazorGlow();`}
-          </pre>
+          <CopyBlock code={`using BlazorGlow.Extensions;\n\nbuilder.Services.AddBlazorGlow();`} />
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">3. Add imports</h2>
           <p className="text-text-muted mb-4">In your <code className="px-1.5 py-0.5 rounded bg-bg-card text-sm">_Imports.razor</code>:</p>
-          <pre className="p-4 rounded-xl bg-bg-card border border-border text-sm overflow-x-auto">
-{`@using BlazorGlow.Components`}
-          </pre>
+          <CopyBlock code="@using BlazorGlow.Components" />
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">4. Add assets</h2>
-          <p className="text-text-muted mb-4">In your host page (<code className="px-1.5 py-0.5 rounded bg-bg-card text-sm">App.razor</code> or <code className="px-1.5 py-0.5 rounded bg-bg-card text-sm">_Host.cshtml</code>):</p>
-          <pre className="p-4 rounded-xl bg-bg-card border border-border text-sm overflow-x-auto">
-{`<link href="_content/BlazorGlow/blazorglow.css" rel="stylesheet" />
-<script src="_content/BlazorGlow/blazorglow.js" type="module"></script>`}
-          </pre>
+          <p className="text-text-muted mb-4">In your host page:</p>
+          <CopyBlock code={`<link href="_content/BlazorGlow/blazorglow.css" rel="stylesheet" />\n<script src="_content/BlazorGlow/blazorglow.js" type="module"></script>`} />
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">5. Use a component</h2>
-          <pre className="p-4 rounded-xl bg-bg-card border border-border text-sm overflow-x-auto">
-{`<ShimmerButton OnClick="HandleClick">
-    Get Started
-</ShimmerButton>
-
-<Card3D MaxRotate="15">
-    <div class="p-8">
-        <h3>Hover me</h3>
-        <p>I tilt in 3D!</p>
-    </div>
-</Card3D>`}
-          </pre>
+          <CopyBlock code={`<ShimmerButton OnClick="HandleClick">\n    Get Started\n</ShimmerButton>\n\n<Card3D MaxRotate="15">\n    <div class="p-8">\n        <h3>Hover me</h3>\n    </div>\n</Card3D>`} />
         </section>
 
         <section>

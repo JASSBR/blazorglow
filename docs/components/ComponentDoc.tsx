@@ -1,3 +1,7 @@
+"use client";
+
+import { CopyBlock } from "./CopyBlock";
+
 interface Param {
   name: string;
   type: string;
@@ -30,17 +34,13 @@ export default function ComponentDoc({ name, description, category, params, usag
       {/* Installation */}
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-4">Installation</h2>
-        <div className="p-4 rounded-xl bg-bg-card border border-border font-mono text-sm">
-          <span className="text-text-muted">$ </span>dotnet add package BlazorGlow
-        </div>
+        <CopyBlock code="dotnet add package BlazorGlow" prefix="$" />
       </section>
 
       {/* Usage */}
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-4">Usage</h2>
-        <pre className="p-4 rounded-xl bg-bg-card border border-border text-sm overflow-x-auto">
-          {usage}
-        </pre>
+        <CopyBlock code={usage} />
       </section>
 
       {/* Parameters */}
@@ -73,17 +73,13 @@ export default function ComponentDoc({ name, description, category, params, usag
       {/* Source code */}
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-4">Source (.razor)</h2>
-        <pre className="p-4 rounded-xl bg-bg-card border border-border text-sm overflow-x-auto max-h-96">
-          {razorCode}
-        </pre>
+        <CopyBlock code={razorCode} />
       </section>
 
       {cssCode && (
         <section className="mb-10">
           <h2 className="text-2xl font-semibold mb-4">Source (.razor.css)</h2>
-          <pre className="p-4 rounded-xl bg-bg-card border border-border text-sm overflow-x-auto max-h-96">
-            {cssCode}
-          </pre>
+          <CopyBlock code={cssCode} />
         </section>
       )}
     </div>
