@@ -1,8 +1,10 @@
 import ComponentDoc from "@/components/ComponentDoc";
+import FlipWordsPreview from "@/components/previews/FlipWordsPreview";
 
 export default function FlipWordsPage() {
   return (
     <ComponentDoc
+      preview={<FlipWordsPreview />}
       name="Flip Words"
       description="An inline text component that cycles through an array of words with a smooth flip animation, perfect for hero sections and taglines."
       category="Text"

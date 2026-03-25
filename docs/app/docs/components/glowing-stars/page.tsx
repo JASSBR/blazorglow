@@ -1,8 +1,10 @@
 import ComponentDoc from "@/components/ComponentDoc";
+import GlowingStarsPreview from "@/components/previews/GlowingStarsPreview";
 
 export default function GlowingStarsPage() {
   return (
     <ComponentDoc
+      preview={<GlowingStarsPreview />}
       name="Glowing Stars"
       description="Randomly placed star particles that pulse with a soft glow animation, creating a starfield background effect for dark-themed sections."
       category="Backgrounds"

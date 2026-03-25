@@ -1,8 +1,10 @@
 import ComponentDoc from "@/components/ComponentDoc";
+import MeteorsPreview from "@/components/previews/MeteorsPreview";
 
 export default function MeteorsPage() {
   return (
     <ComponentDoc
+      preview={<MeteorsPreview />}
       name="Meteors"
       description="Randomly generated falling meteor particles that streak across a container, creating a cosmic rain effect ideal for dark-themed hero sections."
       category="Backgrounds"

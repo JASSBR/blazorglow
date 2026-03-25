@@ -1,8 +1,10 @@
 import ComponentDoc from "@/components/ComponentDoc";
+import BackgroundGradientPreview from "@/components/previews/BackgroundGradientPreview";
 
 export default function BackgroundGradientPage() {
   return (
     <ComponentDoc
+      preview={<BackgroundGradientPreview />}
       name="Background Gradient"
       description="An animated background gradient that smoothly shifts between multiple colors, providing a vibrant, living backdrop for any content."
       category="Backgrounds"

@@ -1,8 +1,10 @@
 import ComponentDoc from "@/components/ComponentDoc";
+import TextGeneratePreview from "@/components/previews/TextGeneratePreview";
 
 export default function TextGeneratePage() {
   return (
     <ComponentDoc
+      preview={<TextGeneratePreview />}
       name="Text Generate Effect"
       description="A text component that progressively reveals words with a blur-to-clear fade-in animation, triggered on scroll into view."
       category="Text"

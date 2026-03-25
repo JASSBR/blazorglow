@@ -1,8 +1,10 @@
 import ComponentDoc from "@/components/ComponentDoc";
+import Card3DPreview from "@/components/previews/Card3DPreview";
 
 export default function Card3DPage() {
   return (
     <ComponentDoc
+      preview={<Card3DPreview />}
       name="3D Card"
       description="A card that tilts in 3D space following the mouse cursor, creating a realistic perspective effect with configurable rotation and depth."
       category="Cards"

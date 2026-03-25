@@ -1,8 +1,10 @@
 import ComponentDoc from "@/components/ComponentDoc";
+import SpotlightPreview from "@/components/previews/SpotlightPreview";
 
 export default function SpotlightPage() {
   return (
     <ComponentDoc
+      preview={<SpotlightPreview />}
       name="Spotlight"
       description="A container that renders a radial spotlight effect that follows the mouse cursor, creating an elegant hover interaction."
       category="Effects"

@@ -17,18 +17,29 @@ interface ComponentDocProps {
   usage: string;
   razorCode: string;
   cssCode?: string;
+  preview?: React.ReactNode;
 }
 
-export default function ComponentDoc({ name, description, category, params, usage, razorCode, cssCode }: ComponentDocProps) {
+export default function ComponentDoc({ name, description, category, params, usage, razorCode, cssCode, preview }: ComponentDocProps) {
   return (
     <div className="max-w-3xl">
       <span className="text-xs uppercase tracking-wider text-primary font-medium">{category}</span>
       <h1 className="text-4xl font-bold mt-2 mb-3">{name}</h1>
       <p className="text-text-muted text-lg mb-10">{description}</p>
 
-      {/* Preview placeholder */}
-      <div className="rounded-2xl border border-border bg-bg-card/50 h-48 flex items-center justify-center mb-10">
-        <span className="text-text-muted text-sm">Live Blazor preview coming soon</span>
+      {/* Live Preview */}
+      <div className="rounded-2xl border border-border overflow-hidden mb-10">
+        <div className="px-4 py-2 border-b border-border bg-bg-card/50 flex items-center gap-2">
+          <span className="w-3 h-3 rounded-full bg-red-500/60" />
+          <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
+          <span className="w-3 h-3 rounded-full bg-green-500/60" />
+          <span className="ml-2 text-xs text-text-muted">Preview</span>
+        </div>
+        {preview || (
+          <div className="h-48 flex items-center justify-center bg-zinc-950">
+            <span className="text-text-muted text-sm">Preview loading...</span>
+          </div>
+        )}
       </div>
 
       {/* Installation */}

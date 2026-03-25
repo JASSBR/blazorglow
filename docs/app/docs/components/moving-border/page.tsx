@@ -1,8 +1,10 @@
 import ComponentDoc from "@/components/ComponentDoc";
+import MovingBorderPreview from "@/components/previews/MovingBorderPreview";
 
 export default function MovingBorderPage() {
   return (
     <ComponentDoc
+      preview={<MovingBorderPreview />}
       name="Moving Border"
       description="A container with an animated rotating border that creates a continuous, eye-catching glow effect around any content."
       category="Borders"

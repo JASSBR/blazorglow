@@ -1,8 +1,10 @@
 import ComponentDoc from "@/components/ComponentDoc";
+import CardHoverPreview from "@/components/previews/CardHoverPreview";
 
 export default function CardHoverPage() {
   return (
     <ComponentDoc
+      preview={<CardHoverPreview />}
       name="Card Hover Effect"
       description="A card component that reveals a glowing border spotlight effect on hover, with the glow following the cursor position along the card edges."
       category="Cards"

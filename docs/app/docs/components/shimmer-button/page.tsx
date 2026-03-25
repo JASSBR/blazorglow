@@ -1,8 +1,10 @@
 import ComponentDoc from "@/components/ComponentDoc";
+import ShimmerButtonPreview from "@/components/previews/ShimmerButtonPreview";
 
 export default function ShimmerButtonPage() {
   return (
     <ComponentDoc
+      preview={<ShimmerButtonPreview />}
       name="Shimmer Button"
       description="A button with a continuously animated shimmer highlight sweep, creating an attention-grabbing call-to-action element."
       category="Buttons"
