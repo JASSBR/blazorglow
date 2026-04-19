@@ -19,7 +19,16 @@ jobs:
         run: dotnet restore
       - name: Build
         run: dotnet build --no-restore -c Release
+      - name: Check for test projects
+        id: check-tests
+        run: |
+          if find . -name "*.Tests.csproj" -o -name "*Test*.csproj" | grep -q .; then
+            echo "has-tests=true" >> $GITHUB_OUTPUT
+          else
+            echo "has-tests=false" >> $GITHUB_OUTPUT
+          fi
       - name: Test
+        if: steps.check-tests.outputs.has-tests == 'true'
         run: dotnet test --no-build -c Release
       - name: Pack
         run: dotnet pack src/BlazorGlow/BlazorGlow.csproj --no-build -c Release -o ./nupkg
